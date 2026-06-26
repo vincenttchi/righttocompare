@@ -178,3 +178,17 @@ npm install
 # Initialize the React runtime environment (Starts on Port 3000)
 npm run dev
 ```
+
+---
+
+## The Engineering Team
+
+RightToCompare was designed and developed as a collaborative Computer Science Senior Capstone Project (Class of 2026) by:
+
+- **Darren** – [GitHub](https://github.com/drnpf)
+- **Michael** – [GitHub](https://github.com/m-the-coder)
+- **Dean** – [GitHub](https://github.com/DSC010)
+- **Simon** – [GitHub](https://github.com/Simonv84)
+- **Vincent** – [GitHub](https://github.com/vincenttchi)
+
+_A special thanks to our advisors and peers at California State University, Long Beach for their guidance and feedback throughout the software development lifecycle._
