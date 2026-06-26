@@ -197,6 +197,26 @@ export default function PhoneComparisonPage({
   }, [phoneIds]);
 
   /**
+   * SYNC: Automatically Track Compared Phones in Recently Viewed History
+   * Signal: phoneDataList changes (whenever compared phones are loaded)
+   * Action: Safely pushes the compared phone IDs into the historical context
+   *         without forcing the user to click away from the table.
+   */
+  useEffect(() => {
+    if (phoneDataList.length === 0) return;
+
+    // Iterate through the currently loaded comparison targets
+    phoneDataList.forEach((phone) => {
+      // If the phone isn't tracked in the history array yet, register it
+      if (recentlyViewedPhones && !recentlyViewedPhones.includes(phone.id)) {
+        // We use onNavigate here because its parent implementation handles
+        // updating the history state/local storage for a phone ID.
+        onNavigate?.(phone.id);
+      }
+    });
+  }, [phoneDataList, recentlyViewedPhones, onNavigate]);
+
+  /**
    * POPULARITY TRACKING OF COMPARISON:
    * Signal: Change in phoneIds array
    * Action: Logs the comparison being viewed after some set time to account for
