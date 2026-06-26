@@ -118,7 +118,7 @@ To experience the platform's advanced capabilities without running the entire st
 ### 1. Repository Setup
 
 ```bash
-git clone [https://github.com/vincenttchi/righttocompare.git](https://github.com/vincenttchi/righttocompare.git)
+git clone [https://github.com/drnpf/righttocompare.git](https://github.com/drnpf/righttocompare.git)
 cd righttocompare
 ```
 
