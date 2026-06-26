@@ -1,102 +1,107 @@
 [
   {
-    "title": "Inconsistent software ruins great hardware",
-    "review": "The hardware design is stunning and the display is the best I've seen. However, the software is full of bloatware and background processes that kill the battery. It's a mixed bag for sure.",
-    "ratings": {"camera": 4, "battery": 2, "design": 5, "performance": 3, "value": 3}
+    "sentiment": "positive",
+    "tags": ["gaming", "premium"],
+    "title": "Gaming Beast!",
+    "review": "The cooling is incredible. I get high fps in every game and the refresh rate is so smooth. Totally goated for mobile gaming.",
+    "ratings": {"camera": 3, "battery": 4, "design": 4, "performance": 5, "value": 4}
   },
   {
-    "title": "The perfect size, but poor thermals",
-    "review": "I love the compact design and it's so easy to use one-handed. But the performance takes a hit when gaming; it gets hot and the software starts throttling the CPU to save the battery.",
-    "ratings": {"camera": 4, "battery": 3, "design": 5, "performance": 2, "value": 3}
+    "sentiment": "positive",
+    "tags": ["display", "premium"],
+    "title": "Stunning Display and Sound",
+    "review": "The amoled screen is vivid and sharp. Also, the stereo speakers are surprisingly loud. Best media experience on a phone.",
+    "ratings": {"camera": 4, "battery": 4, "design": 5, "performance": 4, "value": 4}
   },
   {
-    "title": "Best-in-class biometric security",
-    "review": "The fingerprint sensor is lightning fast and the software integration for security is top-notch. The design is a bit industrial, but the performance and battery life make it a reliable work tool.",
-    "ratings": {"camera": 3, "battery": 5, "design": 3, "performance": 5, "value": 4}
+    "sentiment": "positive",
+    "tags": ["software", "premium"],
+    "title": "Secure and Clean",
+    "review": "Fingerprint sensor is snappy and Face ID is reliable. I love that the UI is clean and lacks bloatware. Very secure feel.",
+    "ratings": {"camera": 4, "battery": 4, "design": 4, "performance": 5, "value": 4}
   },
   {
-    "title": "Incredible speakers and audio",
-    "review": "If you care about audio, the design of these stereo speakers is unmatched. The display is great for media, though the camera is just average. Good value if you use your phone as a mini-TV.",
-    "ratings": {"camera": 2, "battery": 4, "design": 4, "performance": 4, "value": 4}
+    "sentiment": "positive",
+    "tags": ["battery", "general"],
+    "title": "Daily Driver Material",
+    "review": "This is my new daily driver. The battery lasts all day and the 5G reception is outstanding even in the basement.",
+    "ratings": {"camera": 3, "battery": 5, "design": 4, "performance": 4, "value": 5}
   },
   {
-    "title": "A nightmare for outdoor use",
-    "review": "The display is fine indoors, but the peak brightness is too low for a sunny day. I find myself struggling to see the camera viewfinder. For this price, the display should be much better.",
-    "ratings": {"camera": 3, "battery": 4, "design": 3, "performance": 4, "value": 2}
+    "sentiment": "positive",
+    "tags": ["design", "premium"],
+    "title": "Impressive Build Quality",
+    "review": "The titanium design is beautiful and it feels very premium in the hand. It is not heavy at all compared to my last one.",
+    "ratings": {"camera": 4, "battery": 3, "design": 5, "performance": 4, "value": 3}
   },
   {
-    "title": "Long-term support is the real value",
-    "review": "The performance is steady and the software is clean, but the real value is the 7 years of promised updates. The battery is replaceable too! A win for sustainability and design.",
-    "ratings": {"camera": 3, "battery": 4, "design": 4, "performance": 4, "value": 5}
+    "sentiment": "mixed",
+    "tags": ["performance", "gaming"],
+    "title": "Fast but Hot",
+    "review": "The processor is fast however the heat is a problem. It starts throttling during heavy gaming sessions.",
+    "ratings": {"camera": 3, "battery": 3, "design": 4, "performance": 3, "value": 3}
   },
   {
-    "title": "Telephoto lens is a game changer",
-    "review": "I bought this for the camera and it didn't disappoint. The zoom performance is incredible. The design is a bit slippery, so get a case. Battery life is decent but not groundbreaking.",
-    "ratings": {"camera": 5, "battery": 3, "design": 3, "performance": 4, "value": 4}
+    "sentiment": "mixed",
+    "tags": ["display", "connectivity"],
+    "title": "Good Screen, Bad Connectivity",
+    "review": "The 120hz screen is smooth whereas the signal is weak. I barely get 5G in the city which is frustrating.",
+    "ratings": {"camera": 3, "battery": 3, "design": 4, "performance": 4, "value": 3}
   },
   {
-    "title": "Too many compromises for the cost",
-    "review": "The performance is okay, but the display is only 60Hz and the design feels like cheap plastic. The value just isn't there when the camera stutters in low light. Disappointed.",
-    "ratings": {"camera": 2, "battery": 3, "design": 2, "performance": 3, "value": 1}
+    "sentiment": "mixed",
+    "tags": ["design", "premium"],
+    "title": "Beautiful Design but Slippery",
+    "review": "The glass build is stunning but the grip is very slippery. You definitely need a case for this one.",
+    "ratings": {"camera": 4, "battery": 4, "design": 3, "performance": 4, "value": 4}
   },
   {
-    "title": "Fast charging saves a weak battery",
-    "review": "The battery capacity is small and the performance is average, but the software optimizations and the 100W charging speed make up for it. The design is thin and very light.",
-    "ratings": {"camera": 3, "battery": 2, "design": 5, "performance": 3, "value": 4}
+    "sentiment": "mixed",
+    "tags": ["software", "premium"],
+    "title": "Great Hardware, Slow Updates",
+    "review": "The hardware is solid although the software updates are slow. I'm still waiting for the latest security patch.",
+    "ratings": {"camera": 4, "battery": 4, "design": 4, "performance": 3, "value": 3}
   },
   {
-    "title": "Buggy software keeps this from greatness",
-    "review": "I want to love the performance, but the software keeps freezing. The camera app takes 3 seconds to open. The design is beautiful, but the user experience is frustrating.",
-    "ratings": {"camera": 3, "battery": 4, "design": 5, "performance": 2, "value": 2}
+    "sentiment": "mixed",
+    "tags": ["camera", "audio"],
+    "title": "Decent Camera, Mid Audio",
+    "review": "The portrait mode is impressive but the speakers are quiet. Call quality is also just mediocre.",
+    "ratings": {"camera": 4, "battery": 3, "design": 3, "performance": 3, "value": 3}
   },
   {
-    "title": "Built like a tank, weighs like one too",
-    "review": "The design is incredibly durable and the battery lasts forever. However, the performance is sluggish and the display is quite dim. It's great for the construction site, not for gaming.",
-    "ratings": {"camera": 2, "battery": 5, "design": 2, "performance": 2, "value": 3}
+    "sentiment": "negative",
+    "tags": ["performance", "budget"],
+    "title": "Total Garbage Performance",
+    "review": "This phone is so slow. It freezes constantly and the software is buggy. Honestly, it is a piece of trash.",
+    "ratings": {"camera": 2, "battery": 3, "design": 3, "performance": 1, "value": 1}
   },
   {
-    "title": "The ultimate creator tool",
-    "review": "The camera video quality is professional grade. The performance handles 4K editing in the software without a hitch. The battery drains fast under load, but the value for pros is high.",
-    "ratings": {"camera": 5, "battery": 2, "design": 4, "performance": 5, "value": 4}
+    "sentiment": "negative",
+    "tags": ["battery", "budget"],
+    "title": "Terrible Battery Life",
+    "review": "The battery dies in 4 hours. Charging is slow and the power drain is just awful. Avoid this one.",
+    "ratings": {"camera": 3, "battery": 1, "design": 3, "performance": 3, "value": 2}
   },
   {
-    "title": "Minimalist software, maximum speed",
-    "review": "No bloatware, just pure performance. The display is responsive and the design is clean. I wish the camera had more features, but the battery life is solid for daily use.",
-    "ratings": {"camera": 3, "battery": 4, "design": 4, "performance": 5, "value": 5}
+    "sentiment": "negative",
+    "tags": ["value", "premium"],
+    "title": "Overpriced and Fragile",
+    "review": "It feels very cheap and the screen is fragile. Definitely overpriced for such a flimsy build.",
+    "ratings": {"camera": 2, "battery": 2, "design": 2, "performance": 2, "value": 1}
   },
   {
-    "title": "Great value but terrible signal",
-    "review": "The value is great on paper, but the antenna design is poor. I lose signal in places where my old phone was fine. Performance and battery are good, but what's the point if I can't call?",
-    "ratings": {"camera": 4, "battery": 4, "design": 2, "performance": 4, "value": 3}
+    "sentiment": "negative",
+    "tags": ["software", "budget"],
+    "title": "Bloatware Everywhere",
+    "review": "The OS is littered with bloatware. I hate the annoying pre-installed apps. The UI is just messy and bad.",
+    "ratings": {"camera": 3, "battery": 3, "design": 3, "performance": 2, "value": 2}
   },
   {
-    "title": "Stunning display, fingerprint magnet",
-    "review": "The display is vibrant and sharp, but the glass design on the back is constantly covered in smudges. Performance is snappy, though the camera lens flares a lot in bright light.",
-    "ratings": {"camera": 3, "battery": 3, "design": 2, "performance": 5, "value": 3}
-  },
-  {
-    "title": "Pricey but the ecosystem is worth it",
-    "review": "You're paying a premium for the design and the software ecosystem. Everything syncs perfectly. The performance is top-tier and the battery is consistent. High price, high value.",
-    "ratings": {"camera": 5, "battery": 4, "design": 5, "performance": 5, "value": 3}
-  },
-  {
-    "title": "Average at everything, master of none",
-    "review": "The design is fine, the performance is fine, and the battery is fine. It’s a safe choice but lacks any 'wow' factor. The value is decent if you find it on sale.",
-    "ratings": {"camera": 3, "battery": 3, "design": 3, "performance": 3, "value": 3}
-  },
-  {
-    "title": "Amazing haptics and typing feel",
-    "review": "The design of the haptic motor makes the software feel so much more tactile. Performance is great for multitasking. The camera is good for social media. Solid value overall.",
-    "ratings": {"camera": 4, "battery": 3, "design": 5, "performance": 4, "value": 4}
-  },
-  {
-    "title": "Wait for a software update",
-    "review": "The hardware and display are ready for prime time, but the software feels like a beta. Performance stutters and the battery calibration is off. Great potential, currently flawed.",
-    "ratings": {"camera": 4, "battery": 2, "design": 4, "performance": 2, "value": 2}
-  },
-  {
-    "title": "Compact, powerful, and expensive",
-    "review": "Small phones usually sacrifice performance or battery, but this one doesn't. The design is premium and the camera is versatile. You just have to pay a massive price for it.",
-    "ratings": {"camera": 5, "battery": 4, "design": 5, "performance": 5, "value": 2}
+    "sentiment": "negative",
+    "tags": ["support", "general"],
+    "title": "Awful Support",
+    "review": "I had a bug with the charging port but the warranty support was terrible. Customer service is a struggle.",
+    "ratings": {"camera": 3, "battery": 2, "design": 3, "performance": 3, "value": 1}
   }
 ]

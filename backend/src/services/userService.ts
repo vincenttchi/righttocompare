@@ -71,11 +71,11 @@ export const updateUserProfile = async (uid: string, data: Partial<IUser>): Prom
 
 export const updateNotificationState = async (
   uid: string,
-  notificationState: IUser["notificationState"]
+  notificationState: IUser["notificationState"],
 ): Promise<IUser | null> => {
   return await User.findOneAndUpdate(
     { firebaseUid: uid },
     { $set: { notificationState } },
-    { new: true, runValidators: true }
+    { returnDocument: "after", runValidators: true },
   );
 };

@@ -17,12 +17,12 @@ async def retrieve_candidates(profile: PreferenceProfile) -> list[dict]:
 
     # Platform from new schema
     if profile.platform == "ios":
-        q["specs.performance.operatingSystem"] = {
+        q["specs.performance.operatingSystem.raw"] = {
             "$regex": r"\bios\b|iphone",
             "$options": "i",
         }
     elif profile.platform == "android":
-        q["specs.performance.operatingSystem"] = {
+        q["specs.performance.operatingSystem.raw"] = {
             "$regex": r"android",
             "$options": "i",
         }

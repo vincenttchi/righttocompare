@@ -12,7 +12,7 @@ import {
   verifyPasswordResetCode,
   confirmPasswordReset,
 } from "firebase/auth";
-import { auth } from "../firebase/config";
+import { auth } from "../config/firebaseConfig";
 import { getUserProfile, syncUserWithBackend, updateUserProfile } from "../api/userApi";
 import { AppUser } from "../types/userTypes";
 

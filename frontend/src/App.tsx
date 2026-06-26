@@ -4,28 +4,28 @@ import { Toaster } from "sonner@2.0.3";
 import { AuthProvider, useAuth } from "./context/AuthContext";
 
 // UI Components
-import { DarkModeProvider } from "./components/DarkModeContext";
-import NavigationBar from "./imports/NavigationBar";
-import FooterBar from "./imports/FooterBar";
-import BackToTopButton from "./components/BackToTopButton";
+import { DarkModeProvider } from "./context/DarkModeContext";
+import NavigationBar from "./components/common/NavigationBar";
+import FooterBar from "./components/common/FooterBar";
+import BackToTopButton from "./components/common/BackToTopButton";
 import LoadingSpinner from "./components/ui/LoadingSpinner";
 
 // Pages (Lazy Loaded)
-const ProtectedRoute = lazy(() => import("./components/ProtectedRoute"));
-const PhoneSpecPage = lazy(() => import("./components/PhoneSpecPage"));
-const PhoneComparisonPage = lazy(() => import("./components/PhoneComparisonPage"));
-const PhoneCatalogPage = lazy(() => import("./components/PhoneCatalogPage"));
-const DiscussionsPage = lazy(() => import("./components/DiscussionsPage"));
-const DiscussionDetailPage = lazy(() => import("./components/DiscussionDetailPage"));
-const SignInPage = lazy(() => import("./components/SignInPage"));
-const SignUpPage = lazy(() => import("./components/SignUpPage"));
-const UserProfilePage = lazy(() => import("./components/UserProfilePage"));
-const AdminDashboardPage = lazy(() => import("./components/AdminDashboardPage"));
-const PasswordResetPage = lazy(() => import("./components/PasswordResetPage"));
-const TrendsPage = lazy(() => import("./components/TrendsPage"));
+const ProtectedRoute = lazy(() => import("./components/auth/ProtectedRoute"));
+const PhoneSpecPage = lazy(() => import("./pages/catalog/PhoneSpecPage"));
+const PhoneComparisonPage = lazy(() => import("./pages/comparison/PhoneComparisonPage"));
+const PhoneCatalogPage = lazy(() => import("./pages/catalog/PhoneCatalogPage"));
+const DiscussionsPage = lazy(() => import("./pages/discussions/DiscussionsPage"));
+const DiscussionDetailPage = lazy(() => import("./pages/discussions/DiscussionDetailPage"));
+const SignInPage = lazy(() => import("./pages/auth/SignInPage"));
+const SignUpPage = lazy(() => import("./pages/auth/SignUpPage"));
+const UserProfilePage = lazy(() => import("./pages/user/UserProfilePage"));
+const AdminDashboardPage = lazy(() => import("./pages/admin/AdminDashboardPage"));
+const PasswordResetPage = lazy(() => import("./pages/auth/PasswordResetPage"));
+const TrendsPage = lazy(() => import("./pages/trends/TrendsPage"));
 
 // UI Component (Lazy Loaded)
-const AIChatWidget = lazy(() => import("./components/AIChatWidget"));
+const AIChatWidget = lazy(() => import("./components/chat/AIChatWidget"));
 
 type SelectedSpecsState = Record<string, string[]>;
 type CatalogFiltersSessionState = {
@@ -249,7 +249,7 @@ function AppContent() {
     }
   }, [authLoading, currentUser]);
 
-/**
+  /**
    * COMPARISON PERSISTENCE:
    * Signal: Any changes to the comparisonPhoneIds array (i.e. adding new phone)
    * Action: Syncs current comparison ID list to localStorage; keeps compares
@@ -278,7 +278,7 @@ function AppContent() {
       saveToDb();
     }
   }, [comparisonPhoneIds]);
-  
+
   useEffect(() => {
     if (!sessionStateHydrated) return;
     saveSelectedSpecsToSession(SPEC_PAGE_FILTERS_SESSION_KEY, sessionSpecPageFilters);

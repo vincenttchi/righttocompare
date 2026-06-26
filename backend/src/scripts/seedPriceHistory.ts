@@ -7,39 +7,44 @@ import path from "path";
 dotenv.config({ path: path.resolve(__dirname, "../../.env") });
 const MONGO_URI = process.env.MONGO_URI as string;
 
-const roundPrice = (num: number) => Math.round(num);
+const HISTORY_MONTHS = 6;
+const MOCK_SOURCE = "mock-seed";
 
-const generatePriceHistory = (currentPrice: number) => {
-  const months = 6;
-  const points: { amount: number; month: string; recordedAt: Date }[] = [];
-
+const generateIntelligentHistory = (phone: any) => {
+  const points: any[] = [];
   const now = new Date();
+  const msrp = Number(phone.price);
+  const releaseDate = new Date(phone.releaseDate || now);
 
-  for (let i = months - 1; i >= 0; i--) {
+  const ageInDays = (now.getTime() - releaseDate.getTime()) / (1000 * 3600 * 24);
+
+  for (let i = HISTORY_MONTHS - 1; i >= 0; i--) {
     const date = new Date(now);
     date.setMonth(now.getMonth() - i);
 
-    let priceVariation = 1 + Math.random() * 0.2; // up to +20% older prices
-    let amount = currentPrice * priceVariation;
+    let amount: number = msrp;
 
-    // slight randomness
-    amount += (Math.random() - 0.5) * 50;
+    // New phones stay at MSRP
+    if (ageInDays < 60) {
+      amount = msrp;
+    } else {
+      // Older phones have a higher chance of a deeper discount
+      const saleChance = ageInDays > 180 ? 0.4 : 0.2; // 40% vs 20% chance
+      const maxDiscount = ageInDays > 180 ? 0.3 : 0.15; // Max 30% vs 15% drop
 
-    // newest month = exact current price
-    if (i === 0) {
-      amount = currentPrice;
+      if (Math.random() < saleChance) {
+        const discountFactor = 0.05 + Math.random() * (maxDiscount - 0.05);
+        amount = msrp * (1 - discountFactor);
+      } else {
+        amount = msrp;
+      }
     }
 
     points.push({
-      amount: roundPrice(amount),
-      month: date.toLocaleString("default", { month: "short", year: "numeric" }),
+      amount: Math.round(amount),
       recordedAt: date,
     });
   }
-
-  // ensure last point matches exactly
-  points[points.length - 1].amount = roundPrice(currentPrice);
-
   return points;
 };
 
@@ -47,38 +52,43 @@ const seed = async () => {
   try {
     console.log("Connecting to MongoDB...");
     await mongoose.connect(MONGO_URI);
-    console.log("Connected!");
+
+    // --- THE CLEAR ---
+    //console.log(`Deleting old '${MOCK_SOURCE}' records...`);
+    //const result = await PriceHistory.deleteMany({ source: MOCK_SOURCE });
+    //console.log(`Deleted ${result.deletedCount} records.`);
 
     const phones = await Phone.find({});
-    console.log(`Found ${phones.length} phones`);
+    console.log(`Analyzing ${phones.length} phones...`);
 
-    let totalInserted = 0;
+    const allDocs: any[] = [];
 
     for (const phone of phones) {
-      const currentPrice = Number(phone.price);
+      const msrp = Number(phone.price);
+      if (!msrp || msrp <= 0) continue;
 
-      if (!currentPrice || currentPrice <= 0) continue;
+      const history = generateIntelligentHistory(phone);
 
-      const history = generatePriceHistory(currentPrice);
-
-      const docs = history.map((h) => ({
-        phoneId: phone.id,
-        amount: h.amount,
-        currency: "USD",
-        source: "mock-seed",
-        raw: `$${h.amount}`,
-        recordedAt: h.recordedAt,
-      }));
-
-      await PriceHistory.insertMany(docs);
-      totalInserted += docs.length;
+      history.forEach((h) => {
+        allDocs.push({
+          phoneId: phone.id,
+          amount: h.amount,
+          currency: "USD",
+          source: MOCK_SOURCE,
+          raw: `$${h.amount}`,
+          recordedAt: h.recordedAt,
+        });
+      });
     }
 
-    console.log(`Inserted ${totalInserted} price history records`);
+    if (allDocs.length > 0) {
+      await PriceHistory.insertMany(allDocs);
+      console.log(`Success: Generated ${allDocs.length} price history.`);
+    }
 
     process.exit(0);
   } catch (err) {
-    console.error("Seeding failed:", err);
+    console.error("Seeder failed:", err);
     process.exit(1);
   }
 };

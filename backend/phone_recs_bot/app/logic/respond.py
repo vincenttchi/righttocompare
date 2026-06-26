@@ -17,6 +17,7 @@ def build_user_view(profile: PreferenceProfile, docs: list[dict]) -> dict:
 
     for i, d in enumerate(docs, 1):
         recs.append({
+            "id": d.get("id"),
             "rank": i,
             "brand": d.get("manufacturer", "Unknown"),
             "model": d.get("name", "Unknown"),
