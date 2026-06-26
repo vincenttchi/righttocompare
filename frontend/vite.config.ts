@@ -17,24 +17,6 @@ export default defineConfig({
       "next-themes@0.4.6": "next-themes",
       "lucide-react@0.487.0": "lucide-react",
       "input-otp@1.4.2": "input-otp",
-      "figma:asset/c677ba4036733b50cf4df2b9c6932db195bf7661.png": path.resolve(
-        __dirname,
-        "./src/assets/samsung_galaxy_s25.png",
-      ),
-      "figma:asset/9f0492f671cd59d55bfede5826dae0ba5a04987c.png": path.resolve(
-        __dirname,
-        "./src/assets/RightToCompare_name_slogan.png",
-      ),
-      "figma:asset/97e15958dda8a68c72375b01cfb9d69534512ed8.png": path.resolve(__dirname, "./src/assets/pixel10.png"),
-      "figma:asset/7243092b9d248569f9ed82517f0a760b59ebcb8a.png": path.resolve(__dirname, "./src/assets/iphone16.png"),
-      "figma:asset/4561f1a435dc79c2ca0bd4aa332a210a40948a78.png": path.resolve(
-        __dirname,
-        "./src/assets/samsung_galaxy_s24_ultra.png",
-      ),
-      "figma:asset/18bcc14c7462237f04633edea2ae040313d21786.png": path.resolve(
-        __dirname,
-        "./src/assets/RightToCompare_icon.png",
-      ),
       "embla-carousel-react@8.6.0": "embla-carousel-react",
       "cmdk@1.1.1": "cmdk",
       "class-variance-authority@0.7.1": "class-variance-authority",

@@ -52,14 +52,23 @@ app.use(
 // | TRAFFIC AND DOS PROTECTION
 // -----------------------------------------------------------
 // Rate limiter
-const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000,
-  max: 100,
-  message: "Too many requests. Please try again later.",
+// Standard API Limiter (100 to 500 requests per 15 minutes)
+const standardLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 500,
+  message: { message: "Too many requests to core services. Please try again later." },
   standardHeaders: true,
-  legacyHeaders: true,
+  legacyHeaders: false,
 });
-//app.use("/api", limiter);
+
+// High-Frequency API Limiter (for real time searches, tickers, and chatbot streaming)
+const highFrequencyLimiter = rateLimit({
+  windowMs: 5 * 60 * 1000, // Shorter 5-minute window
+  max: 300,
+  message: { message: "High volume interaction detected. Please slow down your requests." },
+  standardHeaders: true,
+  legacyHeaders: false,
+});
 
 // ------------------------------------------------------------
 // | DATA PARSING AND SANITIZATION
@@ -77,15 +86,18 @@ app.use(hpp()); // HTTP sanitization against input manipulation attacks
 connectDB();
 initializeEmailService();
 
-app.use("/api/users", userRoutes);
-app.use("/api/phones", phoneRoutes);
-app.use("/api/phones", reviewRoutes); // Review routes nested under phones
-app.use("/api/discussions", discussionRoutes); // Discussion thread routes
-app.use("/api/scraper", scraperRoutes);
-app.use("/api/chatbot", chatbotRoutes);
-app.use("/api/analytics", analyticsRoutes);
-app.use("/api/trends", trendsRoutes);
-app.use("/api/notifications", inAppNotificationRoutes);
+// -- More Forgiving Limiter --
+app.use("/api/chatbot", highFrequencyLimiter, chatbotRoutes);
+app.use("/api/trends", highFrequencyLimiter, trendsRoutes);
+
+// -- Standard Limiters --
+app.use("/api/users", standardLimiter, userRoutes);
+app.use("/api/phones", standardLimiter, phoneRoutes);
+app.use("/api/phones", standardLimiter, reviewRoutes); // Review routes nested under phones
+app.use("/api/discussions", standardLimiter, discussionRoutes); // Discussion thread routes
+app.use("/api/scraper", standardLimiter, scraperRoutes);
+app.use("/api/analytics", standardLimiter, analyticsRoutes);
+app.use("/api/notifications", standardLimiter, inAppNotificationRoutes);
 
 // ------------------------------------------------------------
 // | HEALTH CHECK AND ERROR HANDLING
