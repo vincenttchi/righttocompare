@@ -29,7 +29,7 @@ To experience the platform's advanced capabilities without running the entire st
   <summary><b>2. Conversational AI Device Recommendation Engine (Demo)</b></summary>
   <br/>
   <p align="center">
-    <img src="assets/chatbot.gif" alt="RightToCompare ML Core" width="85%" />
+    <img src="assets/chatbot.gif" alt="RightToCompare ML Core" width="50%" />
   </p>
   <p>An intelligent, natural language processing pipeline that bridges user-space prompts with backend machine learning evaluation loops. Users can input fluid contextual requirements (e.g., <i>"Find a phone under $700 with a top-tier camera and all-day battery life"</i>), and the engine parses the technical criteria to dynamically return a ranked, granularly matched inventory grid.</p>
 </details>
