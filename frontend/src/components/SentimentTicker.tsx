@@ -32,7 +32,6 @@ export function SentimentTicker({ items }: { items: TickerData[] }) {
       }}
     >
       <div className="flex items-center gap-12 animate-marquee-infinite hover:pause w-max">
-        {/* Quadruple the items to ensure a looping of tags*/}
         {[...items, ...items, ...items, ...items].map((item, idx) => {
           const isPos = item.tag.startsWith("+");
           const label = item.tag.slice(1);
