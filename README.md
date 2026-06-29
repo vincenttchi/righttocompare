@@ -4,11 +4,18 @@ A full-stack mobile hardware comparison platform designed to help users make dat
 
 ---
 
-## Technical Architecture & Design Philosophy
+## Tech Stack & Architecture Design
 
-RightToCompare is built on a decoupled **TypeScript-MERN** stack. The backend is organized using a clean **Router-Controller-Service** architecture, which strictly separates API routing from core business logic.
+* **Frontend Engine:** React (v18), TypeScript, TailwindCSS, Shadcn UI, Radix UI primitives.
+* **Backend Architecture:** Node.js, Express.js (TypeScript), Router-Controller-Service pattern.
+* **Database & Scripts:** MongoDB (Mongoose ODM), Web Scraping
+* **Authentication:** Firebase Client SDK + Server-Side Middleware Token Verification.
 
-Rather than serving static pages, the platform operates as a highly dynamic application capable of handling heavy background tasks. The architecture was designed specifically to support continuous data aggregation (via web scrapers), real-time user interface updates, and strictly enforced Role-Based Access Control (RBAC) to separate public features from administrative operations.
+### Component & Page Hierarchy
+The frontend codebase strictly enforces a production-grade **Page-Component-Primitive** structural separation to ensure separation of concerns and maintainable scaling:
+* **`/pages`**: House full-screen layout views tied directly to client-side routing routes (e.g., `TrendsPage`, `PhoneCatalogPage`). This prevents routing layouts from cluttering reusable presentation logic.
+* **`/components`**: Divided into isolated, feature-specific subdirectories (`/trends`, `/catalog`, `/comparison`, `/auth`). Components sitting here manage distinct feature states independently.
+* **`/components/ui`**: Reserved exclusively for clean, stateless, reusable user interface primitives (Shadcn/Radix foundations).
 
 ---
 
@@ -101,10 +108,10 @@ To experience the platform's advanced capabilities without running the entire st
 
 ## Complete Technical Competency Grid
 
-- **Frontend Engine & UI:** React (v18), TypeScript, TailwindCSS, State Management Toggles, LocalStorage Tracking, Figma.
-- **Backend Architecture:** Node.js, Express.js, TypeScript, Router-Controller-Service Pattern, JWT Session Management & Token Rotation.
-- **Data Management & Gathering:** MongoDB (Mongoose ODM), Puppeteer / Scraping Infrastructure, External API Integrations (GeekBench).
-- **Security Implementation:** Input Ingestion Sanitization, Server-Side Authorization Gates, HTTP Rate Limiting, Environment Variable Isolation.
+- **Frontend Engine & UI:** React (v18), TypeScript, TailwindCSS, Figma.
+- **Backend Architecture:** Node.js, Express.js, TypeScript, Router-Controller-Service Pattern.
+- **Data Management & Gathering:** MongoDB (Mongoose ODM), Scraping Infrastructure, External API Integrations (GeekBench).
+- **Security Implementation:** Input Sanitization, Server-Side Authorization Gates, HTTP Rate Limiting, Environment Variable Isolation.
 
 ---
 
