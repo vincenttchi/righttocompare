@@ -1,4 +1,4 @@
-import { CategoryRatings } from "../components/MultiRatingInput";
+import { CategoryRatings } from "../components/common/MultiRatingInput";
 import { ReviewFilterOptions, ReviewData, ReviewsResponse, ReviewActionResponse } from "../types/reviewTypes";
 import { SentimentSummary } from "../types/sentimentTypes";
 import { mapJsonToSentimentSummary } from "../utils/mappers/sentimentMappers";
